@@ -97,7 +97,7 @@ while True:
             gauge4.foreground_color = 0x00FF00
             gauge5.foreground_color = 0x00FF00
 
-        gauge4.level= i
+        gauge4.level = i
         gauge5.level = i
         time.sleep(0.1)
 
@@ -109,6 +109,6 @@ while True:
             gauge4.foreground_color = 0x00FF00
             gauge5.foreground_color = 0x00FF00
 
-        gauge4.level= i
+        gauge4.level = i
         gauge5.level = i
         time.sleep(0.1)

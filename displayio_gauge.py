@@ -69,9 +69,9 @@ class Gauge(displayio.TileGrid):
         self.xcenter = x
         self.ycenter = y
         self.radius = radius
-        self.width = thickness
+        self._width = thickness
         if thickness < 2:
-            self.width = 2
+            self._width = 2
         self._level = level
         tileGridWidth = 2 * self.radius + 1
         tileGridHeight = math.ceil(0.71 * self.radius) + self.radius + 1
@@ -118,7 +118,7 @@ class Gauge(displayio.TileGrid):
 
         # Inner Arc
         x = 0
-        y = self.radius - self.width + 1
+        y = self.radius - self._width + 1
         d = 3 - 2 * y
 
         while x <= y:
@@ -176,10 +176,10 @@ class Gauge(displayio.TileGrid):
             round(math.cos(math.radians(prog)) * (self.radius - 1), 0)
         )
         xe = self.radius + int(
-            round(math.sin(math.radians(prog)) * (self.radius - self.width + 2), 0)
+            round(math.sin(math.radians(prog)) * (self.radius - self._width + 2), 0)
         )
         ye = self.radius + int(
-            round(math.cos(math.radians(prog)) * (self.radius - self.width + 2), 0)
+            round(math.cos(math.radians(prog)) * (self.radius - self._width + 2), 0)
         )
 
         # Draw end line for level value
@@ -189,13 +189,13 @@ class Gauge(displayio.TileGrid):
 
         xp = self.radius + int(
             round(
-                math.sin(math.radians(prog + 1)) * (self.radius - int(self.width / 2)),
+                math.sin(math.radians(prog + 1)) * (self.radius - int(self._width / 2)),
                 0,
             )
         )
         yp = self.radius + int(
             round(
-                math.cos(math.radians(prog + 1)) * (self.radius - int(self.width / 2)),
+                math.cos(math.radians(prog + 1)) * (self.radius - int(self._width / 2)),
                 0,
             )
         )
@@ -205,14 +205,14 @@ class Gauge(displayio.TileGrid):
             xp = self.radius + int(
                 round(
                     math.sin(math.radians(prog + i))
-                    * (self.radius - int(self.width / 2)),
+                    * (self.radius - int(self._width / 2)),
                     0,
                 )
             )
             yp = self.radius + int(
                 round(
                     math.cos(math.radians(prog + i))
-                    * (self.radius - int(self.width / 2)),
+                    * (self.radius - int(self._width / 2)),
                     0,
                 )
             )
@@ -234,10 +234,10 @@ class Gauge(displayio.TileGrid):
             round(math.cos(math.radians(prog)) * (self.radius - 1), 0)
         )
         xe = self.radius + int(
-            round(math.sin(math.radians(prog)) * (self.radius - self.width + 2), 0)
+            round(math.sin(math.radians(prog)) * (self.radius - self._width + 2), 0)
         )
         ye = self.radius + int(
-            round(math.cos(math.radians(prog)) * (self.radius - self.width + 2), 0)
+            round(math.cos(math.radians(prog)) * (self.radius - self._width + 2), 0)
         )
 
         # Draw end line for level value
@@ -250,13 +250,13 @@ class Gauge(displayio.TileGrid):
 
         xp = self.radius + int(
             round(
-                math.sin(math.radians(prog - 1)) * (self.radius - int(self.width / 2)),
+                math.sin(math.radians(prog - 1)) * (self.radius - int(self._width / 2)),
                 0,
             )
         )
         yp = self.radius + int(
             round(
-                math.cos(math.radians(prog - 1)) * (self.radius - int(self.width / 2)),
+                math.cos(math.radians(prog - 1)) * (self.radius - int(self._width / 2)),
                 0,
             )
         )
@@ -266,14 +266,14 @@ class Gauge(displayio.TileGrid):
             xp = self.radius + int(
                 round(
                     math.sin(math.radians(prog - i))
-                    * (self.radius - int(self.width / 2)),
+                    * (self.radius - int(self._width / 2)),
                     0,
                 )
             )
             yp = self.radius + int(
                 round(
                     math.cos(math.radians(prog - i))
-                    * (self.radius - int(self.width / 2)),
+                    * (self.radius - int(self._width / 2)),
                     0,
                 )
             )

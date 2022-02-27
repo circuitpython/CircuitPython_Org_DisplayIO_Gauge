@@ -32,7 +32,7 @@ example_gauge = Gauge(
     radius=30,
     foreground_color=0x00FF00,
     background_color=0x000000,
-    outline_color=0xFFFFFF
+    outline_color=0xFFFFFF,
 )
 main_group.append(example_gauge)
 
