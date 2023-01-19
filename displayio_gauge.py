@@ -54,6 +54,7 @@ class Gauge(displayio.TileGrid):
 
     # The dial is a subclass of TileGrid.
 
+    # pylint: disable=invalid-name, too-many-arguments
     def __init__(
         self,
         x,
