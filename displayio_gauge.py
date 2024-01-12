@@ -52,6 +52,8 @@ class Gauge(displayio.TileGrid):
 
     """
 
+    # pylint: disable=invalid-name, too-many-arguments
+
     # The dial is a subclass of TileGrid.
 
     def __init__(
@@ -65,7 +67,6 @@ class Gauge(displayio.TileGrid):
         foreground_color=0x00FF00,
         background_color=0x00000,
     ):
-
         self.xcenter = x
         self.ycenter = y
         self.radius = radius
@@ -241,7 +242,7 @@ class Gauge(displayio.TileGrid):
         )
 
         # Draw end line for level value
-        if self.level != 100 and self.level != 0:  # @ 100%, no need to draw end line
+        if self.level not in (100, 0):  # @ 100%, no need to draw end line
             bitmaptools.draw_line(self._bitmap, xs, ys, xe, ye, 0)
         if self.level == 24:
             print(xs, ys, xe, ye)
