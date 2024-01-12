@@ -88,7 +88,6 @@ gauge5 = Gauge(
 main_group.append(gauge5)
 
 while True:
-
     for i in range(0, 101, 4):
         if i >= 80:
             gauge4.foreground_color = 0xFF0000
